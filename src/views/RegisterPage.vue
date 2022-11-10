@@ -48,7 +48,7 @@ export default {
                     // Signed in
                     const user = userCredential.user;
                     this.$store.state.condition = false
-                    this.$router.push('showFilms')
+                    this.$router.push('storeView')
                     alert('User created successfully')
                     // ...
                 })
