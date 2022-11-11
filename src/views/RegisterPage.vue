@@ -55,6 +55,17 @@ export default {
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
+                    switch (errorCode) {
+                        case 'auth/weak-password':
+                            alert(' Password should be at least 6 characters')
+                            break
+                        case 'auth/email-already-in-use':
+                            alert('Email already in use')
+                            break
+                        default:
+                            alert('Something went wrong')
+
+                    }
                     // ..
                 });
         }

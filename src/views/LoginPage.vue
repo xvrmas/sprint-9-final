@@ -54,6 +54,17 @@ export default {
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
+                    switch (errorCode) {
+                        case 'auth/user-not-found':
+                            alert('User not found')
+                            break
+                        case 'auth/wrong-password':
+                            alert('Wrong password')
+                            break
+                        default:
+                            alert('Something went wrong')
+
+                    }
                 });
         },
        
