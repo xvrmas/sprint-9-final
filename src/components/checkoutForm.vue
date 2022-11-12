@@ -30,7 +30,7 @@
                         placeholder="52100236674339006">
                 </p>
                 <p>
-                    <label for="cvc">CVC:</label>
+                    <label for="cvc">CVV:</label>
                     <input class="input" id="CVC" v-model="cvc" type="number" name="cvc" placeholder="659">
                 </p>
             </form>
