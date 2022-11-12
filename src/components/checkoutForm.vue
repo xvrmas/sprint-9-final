@@ -35,7 +35,7 @@
                 </p>
             </form>
             <p>
-                <input class="button is-success m-6" @click="checkForm" type="submit" value="Submit">
+                <input class="button m-6" style="background-color:rgb(3, 187, 46); color:white;"  @click="checkForm" type="submit" value="Submit">
             </p>
         </div>
         <div class="column "> </div>

@@ -9,7 +9,5 @@ export default {
 }
 </script>
 <style scoped>
-div{
-    margin:0;
-}
+
 </style>
