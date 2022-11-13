@@ -1,12 +1,13 @@
 <template>
     <div>
-        <section >
+        <section>
             <specialOfert />
         </section>
         <div class="columns">
-            <div class="column  mt-5" v-if="condition2">
-                <h3 class="is-size-3 is-underlined">Cart List:</h3>
-                <table class="table">                    
+            <div class="box" v-if="condition2">
+                <div class="hero">
+                    <h3 class="is-size-5 is-underlined">Cart List:</h3>
+                    <table class="table">
                         <tbody v-for="(item, i) in cartFinal" :key="i">
                             <th class="is-italic">{{ item.product }}<strong></strong></th>
                             <td>${{ item.price }}</td>
@@ -19,30 +20,30 @@
                             </td>
                             <td>${{ item.total }}</td>
                             <td>
-                                <button class="button  is-small is-rounded is-light"
-                                    @click="deleteItem(item)">X</button>
+                                <button class="button  is-small  is-light" @click="deleteItem(item)">X</button>
                             </td>
 
                         </tbody>
-                </table>
-                <div class="has-text-right mr-5">
-                    <h1 class="is-size-6"><strong>Cost:</strong>$ {{ resultat }}</h1>
+                    </table>
+                    <div class="has-text-right mr-4">
+                        <h1 class="is-size-6"><strong>Cost:</strong>$ {{ resultat }}</h1>
 
-                    <h1 class="is-size-6 "><strong>Discount 15%:</strong> $ {{ discount }}</h1>
+                        <h1 class="is-size-6 "><strong>Discount 15%:</strong> $ {{ discount }}</h1>
 
-                    <h1 class="is-size-5"><strong>Total:</strong>$ <strong>{{ resultatDiscount }}</strong></h1>
-                    <hr>
-                    <div>
-                        <button class="button button_add  mt-3" @click="showCheckOut()">Chekout</button>
+                        <h1 class="is-size-5"><strong>Total:</strong>$ <strong>{{ resultatDiscount }}</strong></h1>
+                        <hr>
+                        <div>
+                            <button class="button button_add  mt-3" @click="showCheckOut()">Chekout</button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="columns is-multiline is-centered is-mobile mt-5">
                 <div v-for="(item, i) in getPosts" :key="i">
-                    <div class="card m-2">
+                    <div class="card m-3">
                         <div>
                             <div class="card-image">
-                                <figure class="image" style="height:45vh;  width:40vh">
+                                <figure class="image" style="height:48vh;  width:43vh">
                                     <img :src="item.img" alt="image film">
                                 </figure>
                             </div>
@@ -187,13 +188,11 @@ export default {
 
 </script>
 <style scoped>
+.container{
+    background-color: rgb(7, 7, 7);
+}
 .button_add {
     background-color: rgb(3, 187, 46);
     color: white
-}
-
-.button_plus {
-    background-color: rgb(41, 209, 81);
-    color: white;
 }
 </style>
