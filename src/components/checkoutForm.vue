@@ -3,12 +3,14 @@
         <div class="column"> </div>
         <div class="column is-half is-centered m-6 ">
             <form id="app" method="post">
-                <p v-if="errors.length">
-                    <b>Please correct the following error(s):</b>
-                <ul>
-                    <li v-for="(error, i) in errors" :key="i">{{ error }}</li>
-                </ul>
-                </p>
+                <div class="errorForm">
+                    <p v-if="errors.length">
+                        <b>Please correct the following error(s):</b>
+                    <ul>
+                        <li v-for="(error, i) in errors" :key="i">{{ error }}</li>
+                    </ul>
+                    </p>
+                </div>
                 <p>
                     <label for="name">Name:</label>
                     <input class="input" id="name" v-model="name" type="text" name="name" placeholder="James Stewart">
@@ -24,6 +26,13 @@
                         placeholder="user@user.com">
                 </p>
                 <hr>
+
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam voluptatum optio, deserunt
+                        aperiam id aut reprehenderit culpa dolorum nulla, illum dolor magni excepturi quisquam sed eos
+                        eum nesciunt! Aspernatur, saepe!</p>
+                    <img src="@/assets/icons/pngwing.com.png" style="height:80px" />
+                </div>
                 <p>
                     <label for="card">Card number:</label>
                     <input class="input" id="card" v-model="card" type="number" name="card"
@@ -35,7 +44,8 @@
                 </p>
             </form>
             <p>
-                <input class="button m-6" style="background-color:rgb(3, 187, 46); color:white;"  @click="checkForm" type="submit" value="Submit">
+                <input class="button m-6" style="background-color:rgb(3, 187, 46); color:white;" @click="checkForm"
+                    type="submit" value="Submit">
             </p>
         </div>
         <div class="column "> </div>
@@ -109,3 +119,10 @@ export default {
     }
 }
 </script>
+<style scoped>
+.errorForm {
+    background-color: rgb(251, 65, 65);
+    border-radius: 0% 25%;
+    color:white;
+}
+</style>

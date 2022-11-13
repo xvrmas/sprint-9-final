@@ -3,9 +3,10 @@
         <section>
             <specialOfert />
         </section>
-        <div class="columns">
-            <div class="box" v-if="condition2">
-                <div class="hero">
+        <div
+            class="columns  is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+            <div class="column" v-if="condition2">
+                <div class="hero caixa">
                     <h3 class="is-size-5 is-underlined">Cart List:</h3>
                     <table class="table">
                         <tbody v-for="(item, i) in cartFinal" :key="i">
@@ -43,7 +44,7 @@
                     <div class="card m-3">
                         <div>
                             <div class="card-image">
-                                <figure class="image" style="height:48vh;  width:43vh">
+                                <figure class="image" style="height:45vh;  width:40vh">
                                     <img :src="item.img" alt="image film">
                                 </figure>
                             </div>
@@ -88,7 +89,7 @@ export default {
     },
     computed: {
         ...mapGetters(['getPosts']),
-        ...mapState(['checkout'])
+        ...mapState(['checkout']),
     },
     methods: {
         showProduct(itemPrice, itemText, itemAmount, itemId) {
@@ -149,6 +150,7 @@ export default {
                 this.resultatDiscount = this.resultat
                 this.discount = 0
             }
+
         },
 
         deleteItem(item) {
@@ -182,17 +184,31 @@ export default {
     watch: {
         name(newName) {
             localStorage.cart = newName;
+        },
+        resultatDiscount: function () {
+            this.$emit('resultat', this.resultatDiscount)
         }
     }
 }
 
 </script>
 <style scoped>
-.container{
-    background-color: rgb(7, 7, 7);
-}
 .button_add {
     background-color: rgb(3, 187, 46);
     color: white
+}
+
+.caixa {
+    margin: 5vh;
+}
+
+.table {
+    padding: 0;
+    margin: 0;
+}
+
+.caixa {
+    padding: 0;
+    margin: 0;
 }
 </style>
