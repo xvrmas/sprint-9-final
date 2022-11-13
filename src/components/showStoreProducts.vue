@@ -1,43 +1,31 @@
 <template>
     <div>
-        <section class="mt-3">
+        <section >
             <specialOfert />
         </section>
         <div class="columns">
-            <div class="column  m-4" v-if="condition2">
+            <div class="column  mt-5" v-if="condition2">
                 <h3 class="is-size-3 is-underlined">Cart List:</h3>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th><abbr title="Product"></abbr>Product</th>
-                            <th><abbr title="Price"></abbr>Price</th>
-                            <th><abbr title="Price"></abbr></th>
-                            <th><abbr title="Amount"></abbr></th>
-                            <th><abbr title="Price"></abbr></th>
-                            <th><abbr title="total"></abbr>Total</th>
-                            <th><abbr title="delete"></abbr>delete</th>
-                        </tr>
-                    </thead>
+                <table class="table">                    
+                        <tbody v-for="(item, i) in cartFinal" :key="i">
+                            <th class="is-italic">{{ item.product }}<strong></strong></th>
+                            <td>${{ item.price }}</td>
+                            <td>
+                                <button class="button  is-small is-rounded is-light" @click="resta(item)">-</button>
+                            </td>
+                            <td>{{ item.amount }}</td>
+                            <td>
+                                <button class="button is-small is-rounded is-light" @click="suma(item)">+</button>
+                            </td>
+                            <td>${{ item.total }}</td>
+                            <td>
+                                <button class="button  is-small is-rounded is-light"
+                                    @click="deleteItem(item)">X</button>
+                            </td>
 
-                    <tbody v-for="(item, i) in cartFinal" :key="i">
-                        <th class="is-italic">{{ item.product }}<strong></strong></th>
-                        <td >${{ item.price }}</td>
-                        <td>
-                            <button class="button  is-small is-rounded is-light" @click="resta(item)">-</button>
-                        </td>
-                        <td>{{ item.amount }}</td>
-                        <td>
-                            <button class="button is-small is-rounded is-light" @click="suma(item)">+</button>
-                        </td>
-                        <td>${{ item.total }}</td>
-                        <td>
-                            <button class="button  is-small is-rounded is-light" @click="deleteItem(item)">X</button>
-                        </td>
-
-                    </tbody>
-                    <hr>
+                        </tbody>
                 </table>
-                <div class="has-text-right m-6">
+                <div class="has-text-right mr-5">
                     <h1 class="is-size-6"><strong>Cost:</strong>$ {{ resultat }}</h1>
 
                     <h1 class="is-size-6 "><strong>Discount 15%:</strong> $ {{ discount }}</h1>
@@ -208,5 +196,4 @@ export default {
     background-color: rgb(41, 209, 81);
     color: white;
 }
-
 </style>

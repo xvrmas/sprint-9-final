@@ -1,5 +1,5 @@
 <template>
-    <div class="columns">
+    <div>
         <showStoreProducts />
     </div>
 </template>
