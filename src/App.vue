@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <PanellView></PanellView>
+    <PanellView/>
     <router-view />
-    <footView></footView>
+    <footView/>
   </div>
 </template>
 
