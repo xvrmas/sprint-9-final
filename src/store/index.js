@@ -591,10 +591,7 @@ export default new Vuex.Store({
   actions: {
     GET_FILMS({ commit }) {
       const response = this.state.films;
-      console.log(response)
-      // const films =  response.json();
       commit('setFilms', response)
-      console.log(this.response)
     },
     SET_CONDITION({ commit }) {
       const conditions = false;
