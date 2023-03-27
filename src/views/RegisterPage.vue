@@ -16,7 +16,7 @@
                                 placeholder="Enter your email">
                             <input v-model="contrasena" class="input is-rounded m-2" required type="Password"
                                 placeholder="Enter your password">
-                            <button class="button mt-4" type="submit">create</button>
+                            <button class="button mt-4 is-warning" type="submit">Create</button>
                         </form>
                     </div>
                 </div>

@@ -19,7 +19,7 @@
                             </td>
                             <td>${{ item.total }}</td>
                             <td>
-                                <button class="button  is-small  is-light" @click="deleteItem(item)">X</button>
+                                <button class="button  is-small  is-danger" @click="deleteItem(item)">X</button>
                             </td>
 
                         </tbody>
